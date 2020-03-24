@@ -14,6 +14,13 @@ public class BinarySearchTest {
         Assertions.assertEquals(0, result.getPosition());
     }
 
+    @Test
+    void shouldBeNotInSequence(){
+        SearchResult result = binarySearch.search(2, new int[]{1});
+        Assertions.assertFalse(result.isFound());
+        Assertions.assertEquals(-1, result.getPosition());
+    }
+
 
 
 }
