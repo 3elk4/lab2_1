@@ -28,6 +28,12 @@ public class BinarySearchTest {
         Assertions.assertEquals(0 ,result.getPosition());
     }
 
+    @Test
+    void shouldBeLastElementInSequence(){
+        SearchResult result = binarySearch.search(5, new int[]{1, 2, 3, 4, 5});
+        Assertions.assertTrue(result.isFound());
+        Assertions.assertEquals(4 ,result.getPosition());
+    }
 
 
 }
