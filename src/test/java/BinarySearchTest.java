@@ -21,6 +21,13 @@ public class BinarySearchTest {
         Assertions.assertEquals(-1, result.getPosition());
     }
 
+    @Test
+    void shouldBeFirstElementInSequence(){
+        SearchResult result = binarySearch.search(1, new int[]{1, 2, 3, 4, 5});
+        Assertions.assertTrue(result.isFound());
+        Assertions.assertEquals(0 ,result.getPosition());
+    }
+
 
 
 }
