@@ -101,9 +101,22 @@ public class BinarySearchTest {
         int key = 5;
         SearchResult result = binarySearch.search(key, duplicateSequence);
         MatcherAssert.assertThat("Is not in sequence", result.isFound(), is(true));
-        MatcherAssert.assertThat("Index is not 2", result.getPosition(), is(2));
+        MatcherAssert.assertThat("Index is not 2", result.getPosition(), is(duplicateSequence.length/2));
     }
 
+    @Test
+    void shouldBeNotInSequence4(){
+        int key = 4;
+        SearchResult result = binarySearch.search(key, decreasingSequence);
+        MatcherAssert.assertThat("Is in sequence", result.isFound(), is(false));
+        MatcherAssert.assertThat("Key is 4", result.getPosition(), is(-1));
+    }
 
-
+    @Test
+    void shouldBeNotInSequence5(){
+        int key = 2;
+        SearchResult result = binarySearch.search(key, decreasingSequence);
+        MatcherAssert.assertThat("Is in sequence", result.isFound(), is(false));
+        MatcherAssert.assertThat("Key is 2", result.getPosition(), is(-1));
+    }
 }
