@@ -1,7 +1,6 @@
 import edu.iis.mto.bsearch.BinarySearch;
 import edu.iis.mto.bsearch.SearchResult;
 import org.hamcrest.MatcherAssert;
-import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -92,9 +91,9 @@ public class BinarySearchTest {
     @Test
     void shouldBeInSequence2(){
         int key = -1;
-        SearchResult result = binarySearch.search(key, shortSequence);
+        SearchResult result = binarySearch.search(key, negativeSequence);
         MatcherAssert.assertThat("Is not in sequence", result.isFound(), is(true));
-        MatcherAssert.assertThat("Key is not -1", shortSequence[result.getPosition()], is(key));
+        MatcherAssert.assertThat("Key is not -1", negativeSequence[result.getPosition()], is(key));
     }
 
 
