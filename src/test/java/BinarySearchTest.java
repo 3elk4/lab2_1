@@ -96,6 +96,14 @@ public class BinarySearchTest {
         MatcherAssert.assertThat("Key is not -1", negativeSequence[result.getPosition()], is(key));
     }
 
+    @Test
+    void shouldBeInSequence3(){
+        int key = 5;
+        SearchResult result = binarySearch.search(key, duplicateSequence);
+        MatcherAssert.assertThat("Is not in sequence", result.isFound(), is(true));
+        MatcherAssert.assertThat("Index is not 2", result.getPosition(), is(2));
+    }
+
 
 
 }
